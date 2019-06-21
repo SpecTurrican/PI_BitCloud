@@ -266,15 +266,18 @@ restart_pi () {
 
 	/usr/bin/touch /boot/${COIN}setup
 
-	echo "restarting ... "
+	echo "restarting  the system... "
 	echo " "
 	echo "!!!!!!!!!!!!!!!!!"
 	echo "!!! New login !!!"
 	echo "!!!!!!!!!!!!!!!!!"
 	echo "User: ${ssuser}  Password: ${sspassword}"
 	echo " "
-	read -p "Press any key to rebooting... " -n1 -s && reboot
+	echo " "
 
+	sleep 10
+
+	reboot
 
 }
 
@@ -347,14 +350,14 @@ config_ufw () {
 	# Setup for Firewall UFW
 	# The default port is COIN_PORT
 
-	ufw logging on
-	ufw allow 22/tcp
-	ufw limit 22/tcp
+	/usr/sbin/ufw logging on
+	/usr/sbin/ufw allow 22/tcp
+	/usr/sbin/ufw limit 22/tcp
 	# COIN_PORT
-	ufw allow ${COIN_PORT}/tcp
-	ufw default deny incoming
-	ufw default allow outgoing
-	yes | ufw enable
+	/usr/sbin/ufw allow ${COIN_PORT}/tcp
+	/usr/sbin/ufw default deny incoming
+	/usr/sbin/ufw default allow outgoing
+	yes | /usr/sbin/ufw enable
 
 
 }
@@ -537,7 +540,12 @@ finish () {
 	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo "User: ${ssuser}  Password: ${sspassword}"
 	echo " "
-	read -p "Press any key to rebooting... " -n1 -s && reboot
+	echo " "
+	echo "reboot in 60 sec... "
+
+	sleep 60s
+
+	reboot
 
 
 }
