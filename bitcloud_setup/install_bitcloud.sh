@@ -13,8 +13,9 @@ COIN_BLOCKEXPLORER="https://chainz.cryptoid.info/btdx/api.dws?q=getblockcount"
 
 # DIRS
 ROOT="/root/"
+INSTALL_DIR="${ROOT}PI_BitCloud/"
 COIN_ROOT="${ROOT}.${COIN}"
-COIN_INSTALL="${ROOT}/${COIN}"
+COIN_INSTALL="${ROOT}${COIN}"
 BDB_PREFIX="${COIN_INSTALL}/db4"
 
 # DB
@@ -36,9 +37,12 @@ ssuser="${COIN}"
 sspassword="${COIN}"
 
 # Install Script
-SCRIPT_DIR="${ROOT}${COIN}_setup/"
+SCRIPT_DIR="${INSTALL_DIR}${COIN}_setup/"
 SCRIPT_NAME="install_${COIN}.sh"
-SCRIPT_LOG="${SCRIPT_DIR}logfile_${COIN}_setup.log"
+
+# Logfile
+LOG_DIR="${INSTALL_DIR}logfiles"
+LOG_FILE="make.log"
 
 # System Settings
 checkForRaspbian=$(cat /proc/cpuinfo | grep 'Revision')
@@ -250,7 +254,7 @@ prepair_crontab () {
 	# prepair crontab for restart
 
 	/usr/bin/crontab -u root -r
-	/usr/bin/crontab -u root -l | { cat; echo "@reboot		${SCRIPT_DIR}${SCRIPT_NAME} >> ${SCRIPT_LOG} 2>&1"; } | crontab -
+	/usr/bin/crontab -u root -l | { cat; echo "@reboot		${SCRIPT_DIR}${SCRIPT_NAME} >${LOG_DIR}${LOG_FILE} 2>&1"; } | crontab -
 
 
 }
@@ -270,11 +274,8 @@ restart_pi () {
 	echo "!!!!!!!!!!!!!!!!!"
 	echo "User: ${ssuser}  Password: ${sspassword}"
 	echo " "
-	echo "Rebooting in 30sec ..."
+	read -p "Press any key to rebooting... " -n1 -s && reboot
 
-	sleep 30s
-
-	reboot
 
 }
 
@@ -537,14 +538,7 @@ finish () {
 	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo "User: ${ssuser}  Password: ${sspassword}"
 	echo " "
-	echo "Press any key to rebooting ..."
-	while [ true ] ; do
-	read -t 3 -n 1
-	if [ $? = 0 ] ; then
-		reboot ;
-	else
-	fi
-	done
+	read -p "Press any key to rebooting... " -n1 -s && reboot
 
 
 }
