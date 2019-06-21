@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get -y install git
-OS=$(cat /etc/os-release | grep ID=raspian)
+OS=$(cat /etc/os-release | grep ID=raspbian)
 
 if [ -n "$OS" ]; then
 
