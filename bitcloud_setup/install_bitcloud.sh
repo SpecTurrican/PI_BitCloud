@@ -23,7 +23,7 @@ DB_VERSION="4.8.30"
 DB_FILE="db-${DB_VERSION}.NC.tar.gz"
 DB_DOWNLOAD="http://download.oracle.com/berkeley-db/${DB_FILE}"
 
-# LIBRARIES and DEV_TOOLS 
+# LIBRARIES and DEV_TOOLS
 SSL_VERSION="1.0"
 LIBRARIES="libssl${SSL_VERSION}-dev libboost-all-dev libevent-dev libminiupnpc-dev"
 DEV_TOOLS="build-essential libtool autotools-dev autoconf cmake pkg-config bsdmainutils git libzmq3-dev unzip fail2ban ufw"
@@ -41,7 +41,7 @@ SCRIPT_DIR="${INSTALL_DIR}${COIN}_setup/"
 SCRIPT_NAME="install_${COIN}.sh"
 
 # Logfile
-LOG_DIR="${INSTALL_DIR}logfiles"
+LOG_DIR="${INSTALL_DIR}logfiles/"
 LOG_FILE="make.log"
 
 # System Settings
@@ -487,7 +487,7 @@ watch_synch () {
 
 	sleep 5
 
-	set_blockhigh=$(curl ${COIN_BLOCKEXPLORER)
+	set_blockhigh=$(curl ${COIN_BLOCKEXPLORER})
 	echo "  The current blockhigh is now : ${set_blockhigh} ..."
 	echo "  -----------------------------------------"
 
