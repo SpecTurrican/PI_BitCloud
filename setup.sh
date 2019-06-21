@@ -1,21 +1,36 @@
 #!/bin/bash
 
-apt-get -y install git
-OS=$(cat /etc/os-release | grep ID=raspbian)
+if [[ $EUID -ne 0 ]]; then
 
-if [ -n "$OS" ]; then
-
-	git clone https://github.com/SpecTurrican/PI_BitCloud /root/
-	chmod 744 -R /root/bitcloud_setup/
-	rm /root/setup.sh
-  nohup /root/bitcloud_setup/install_bitcloud.sh >/root/bitcloud_setup/logfile_start.log 2>&1 &
-	clear
-	tail -f /root/bitcloud_setup/logfile_start.log
+	echo "This script must be run as root" 1>&2
 
 else
 
-	echo "This script running only below raspian ... sorry !!!"
-	echo " "
-	echo "Visit https://www.raspberrypi.org/downloads/raspbian/ "
+OS=$(cat /etc/os-release | grep ID=raspbian)
+GIT_URL="https://github.com/SpecTurrican/PI_BitCloud"
+INSTALL_DIR="/root/PI_BitCloud/"
+INSTALL_FILE="${INSTALL_DIR}bitcloud_setup/install_bitcloud.sh"
+LOG_DIR="${INSTALL_DIR}logfiles/"
+LOG_FILE="start.log"
+
+apt-get -y install git
+
+	if [ -n "$OS" ]; then
+
+		cd /root/
+		git clone ${GIT_URL}
+		chmod 744 -R ${INSTALL_DIR}
+		mkdir ${LOG_DIR}
+		nohup ${INSTALL_FILE} >${LOG_DIR}${LOG_FILE} 2>&1 &
+		clear
+		tail -f ${LOG_DIR}${LOG_FILE}
+
+	else
+
+		echo "This script running only below raspian ... sorry !!!"
+		echo " "
+		echo "Visit https://www.raspberrypi.org/downloads/raspbian/ "
+
+	fi
 
 fi
