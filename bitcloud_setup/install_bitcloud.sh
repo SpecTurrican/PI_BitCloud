@@ -59,7 +59,6 @@ start () {
 	echo "Please wait... now configuration the system!"
 
 	# Put here for startup config
-	/usr/bin/touch ${SCRIPT_LOG}
 	/usr/bin/touch /boot/ssh
 	sleep 5
 
