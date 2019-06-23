@@ -26,7 +26,7 @@ DB_DOWNLOAD="http://download.oracle.com/berkeley-db/${DB_FILE}"
 # LIBRARIES and DEV_TOOLS
 SSL_VERSION="1.0"
 LIBRARIES="libssl${SSL_VERSION}-dev libboost-all-dev libevent-dev libminiupnpc-dev"
-DEV_TOOLS="build-essential libtool autotools-dev autoconf cmake pkg-config bsdmainutils git libzmq3-dev unzip fail2ban ufw"
+DEV_TOOLS="build-essential libtool autotools-dev autoconf cmake pkg-config bsdmainutils git libzmq3-dev unzip jq fail2ban ufw"
 
 # Wallet RPC user and password
 rrpcuser="${COIN}pi$(shuf -i 100000000-199999999 -n 1)"
