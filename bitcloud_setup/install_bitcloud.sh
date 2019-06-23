@@ -6,10 +6,10 @@ COIN_PORT="8329"
 COIN_DOWNLOAD="https://github.com/LIMXTEC/Bitcloud"
 COIN_BLOCKCHAIN_VERSION="Blockchain-01-09-2019"
 COIN_BLOCKCHAIN="https://github.com/LIMXTEC/Bitcloud/releases/download/2.1.0.1.1/${COIN_BLOCKCHAIN_VERSION}.zip"
-COIN_NODE="80.211.108.124"
 COIND="/usr/local/bin/${COIN}d"
 COIN_CLI="/usr/local/bin/${COIN}-cli"
 COIN_BLOCKEXPLORER="https://chainz.cryptoid.info/btdx/api.dws?q=getblockcount"
+COIN_NODE="https://chainz.cryptoid.info/btdx/api.dws?q=nodes"
 
 # DIRS
 ROOT="/root/"
@@ -336,9 +336,17 @@ configure_coin_conf () {
 	addnode=${COIN_NODE}
 	killdebugilldebug=1
 
-" > ${COIN_ROOT}/${COIN}.conf
+	#############
+	# NODE LIST #
+	#############" > ${COIN_ROOT}/${COIN}.conf
 
 	chmod 660 ${COIN_ROOT}/*.conf
+	
+	COIN_NODES=$(curl $COIN_NODE | jq '.[] | .nodes[]' |  /bin/sed 's/"//g')
+
+		for addnode in $COIN_NODES; do
+		echo "	addnode=$addnode" >> ${COIN_ROOT}/${COIN}.conf
+		done
 
 
 }
