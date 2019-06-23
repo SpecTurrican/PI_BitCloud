@@ -51,8 +51,13 @@ listen=1
 daemon=1
 logtimestamps=1
 txindex=1
+killdebugilldebug=1                         # no logfile ... safe your sd-card :-)
+
+#############
+# NODE LIST #
+#############
 addnode=add a node from https://chainz.cryptoid.info/btdx/api.dws?q=nodes list
-killdebugilldebug=1                         # no logfile ... safe your sd-card :-) 
+...
 ```
 ## Security
 - You have a Firewall or Router ? Please open the Port 8329 for your raspberry pi. Thanks!
