@@ -13,9 +13,11 @@ wget -qO - https://raw.githubusercontent.com/SpecTurrican/PI_BitCloud/master/set
 ```
 The installation goes into the background. You can follow the installation with :
 ```
-tail -f /root/PI_BitCloud/logfiles/start.log # 1. Phase "Prepar the system"
+tail -f /root/PI_BitCloud/logfiles/start.log  # 1. Phase "Prepar the system"
+
 or
-tail -f /root/PI_BitCloud/logfiles/make.log # 2. Phase "Compiling"
+
+tail -f /root/PI_BitCloud/logfiles/make.log   # 2. Phase "Compiling"
 ```
 The installation takes about 4 hours.
 The Raspberry Pi is restarted 2 times during the installation.
