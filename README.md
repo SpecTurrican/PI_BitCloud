@@ -35,5 +35,28 @@ sudo bitcloud-cli masternode count    # how much mastenode ?
 sudo bitcloud-cli mnsync status       # returns the sync status
 sudo bitcloud-cli help                # list of commands
 ```
+## Configfile
+The configfile for bitcloud is stored in:
+```
+/root/.bitcloud/bitcloud.conf
+```
+Settings during installation:
+```
+rpcuser=bitcloudpixxxxxxxxx                 # x=random
+rpcpassword=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # x=random
+rpcallowip=127.0.0.1
+port=8329
+server=1
+listen=1
+daemon=1
+logtimestamps=1
+txindex=1
+addnode=add a node from https://chainz.cryptoid.info/btdx/api.dws?q=nodes list
+killdebugilldebug=1                         # no logfile ... safe your sd-card :-) 
+```
+## Security
+- You have a Firewall or Router ? Please open the Port 8329 for your raspberry pi. Thanks!
+- fail2ban is configured with 24 hours banntime. (https://www.fail2ban.org/wiki/index.php/Main_Page)
+- ufw service open ports is 22 and 8329. (https://help.ubuntu.com/community/UFW)
 
 ## Have fun and thanks for your support :-)
