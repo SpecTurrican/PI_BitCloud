@@ -1,6 +1,6 @@
 # PI_BitCloud
 
-## Bitcloud for Raspberry Pi 2/3 (without GUI) ... waiting for PI 4 :-)
+## Bitcloud for Raspberry Pi 2/3 (without GUI) ... and PI 4 works to :-)
 
 Needs:
 
