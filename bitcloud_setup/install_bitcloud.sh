@@ -80,36 +80,8 @@ app_install () {
 
 manage_swap () {
 
-	#
-	# Some vendors already have swap set up, so only create it if it's not already there.
-
-	exists="$(swapon --show | grep 'partition')"
-
-	if [ -z "$exists" ]; then
-
-		# https://www.2daygeek.com/shell-script-create-add-extend-swap-space-linux/#
-
-		newswapsize=1024
-
-		grep -q "swapfile" /etc/fstab
-
-		if [ $? -ne 0 ]; then
-
-			fallocate -l ${newswapsize}M /swapfile
-
-			chmod 600 /swapfile
-
-			mkswap /swapfile
-
-			swapon /swapfile
-
-			echo '/swapfile none swap defaults 0 0' >> /etc/fstab
-
-		fi
-
-	fi
-
-	# On a Raspberry Pi 3, the default swap is 100MB. This is a little restrictive, so we are
+	
+	# On a Raspberry Pi, the default swap is 100MB. This is a little restrictive, so we are
 	# expanding it to a full 1GB of swap.
 
 	if [ ! -z "$checkForRaspbian" ]; then
