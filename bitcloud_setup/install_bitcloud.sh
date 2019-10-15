@@ -477,7 +477,7 @@ watch_synch () {
 
 	get_blockhigh=$(${COIN_CLI} getblockcount)
 
-	if [ "$get_blockhigh" -lt "$set_blockhigh" ]
+	if [ $get_blockhigh = $set_blockhigh ]
 	then
 		echo "  ... This may take a long time please wait!..."
 		echo "    Block is now: $get_blockhigh / $set_blockhigh"
