@@ -305,7 +305,6 @@ configure_coin_conf () {
 	daemon=1
 	logtimestamps=1
 	txindex=1
-	addnode=${COIN_NODE}
 	killdebugilldebug=1
 
 	#############
