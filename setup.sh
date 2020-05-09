@@ -13,7 +13,7 @@ INSTALL_FILE="${INSTALL_DIR}bitcloud_setup/install_bitcloud.sh"
 LOG_DIR="${INSTALL_DIR}logfiles/"
 LOG_FILE="start.log"
 
-apt-get -y install git
+apt-get -y update && apt-get -y install git
 
 	if [ -n "$OS" ]; then
 
