@@ -67,4 +67,7 @@ addnode=add a node from https://chainz.cryptoid.info/btdx/api.dws?q=nodes list
 [Homepage](https://bit-cloud.cc/) | [Source GitHub](https://github.com/LIMXTEC/Bitcloud) | [Blockchainexplorer](https://chainz.cryptoid.info/btdx/) | [Discord](https://discord.gg/kgWVGD2) | [Telegram](https://t.me/bitcloud_btdx) | [bitcointalk.org](https://bitcointalk.org/index.php?topic=2092583.0)
 
 ## Have fun and thanks for your support :-)
-# BTDX : BPJWiKtjmnWiQ7H4mPAUyFBeLZfudRv6i7
+BDTX spend to :
+```
+BPJWiKtjmnWiQ7H4mPAUyFBeLZfudRv6i7
+```
