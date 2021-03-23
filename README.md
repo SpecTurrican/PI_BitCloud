@@ -4,7 +4,7 @@
 
 Needs:
 
-+ ISO Raspbian Lite (https://www.raspberrypi.org/downloads/raspbian/)
++ ISO Raspbian Lite (https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit)
 + Login as ROOT (start Raspberry Pi and login as 'pi' user... password is 'raspberry'... 'sudo su root')
 
 You can execute the following install script. Just copy/paste and hit return.
