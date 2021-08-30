@@ -64,7 +64,7 @@ addnode=add a node from https://chainz.cryptoid.info/btdx/api.dws?q=nodes list
 - fail2ban is configured with 24 hours banntime. (https://www.fail2ban.org/wiki/index.php/Main_Page)
 - ufw service open ports is 22 and 8329. (https://help.ubuntu.com/community/UFW)
 ## Infos about Bitcloud
-[Homepage](https://bit-cloud.cc/) | [Source GitHub](https://github.com/LIMXTEC/Bitcloud) | [Blockchainexplorer](https://chainz.cryptoid.info/btdx/) | [Discord](https://discord.gg/kgWVGD2) | [Telegram](https://t.me/bitcloud_btdx) | [bitcointalk.org](https://bitcointalk.org/index.php?topic=2092583.0)
+[Homepage](https://bit-cloud.cc/) | [Source GitHub](https://github.com/LIMXTEC/Bitcloud) | [Blockchainexplorer](https://chainz.cryptoid.info/btdx/) | [Discord](https://discord.gg/kgWVGD2) | [Telegram](https://t.me/bitcloud_btdx) | [bitcointalk.org](https://bitcointalk.org/index.php?topic=5332896.msg56857928#msg56857928)
 
 ## Have fun and thanks for your support :-)
 BDTX donate to :
